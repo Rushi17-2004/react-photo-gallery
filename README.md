@@ -1,16 +1,10 @@
-# React + Vite
+# Dynamic Photo Gallery Deck with Live API Pagination
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A sleek, responsive stock photography dashboard built with **React**, **Vite**, and **Tailwind CSS**. This application communicates asynchronously with the Unsplash-style Picsum JSON API to fetch, organize, and paginate through high-resolution image assets dynamically.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🚀 Features
+* **Automated Lifecycle Mounting:** Utilizes React's `useEffect` hook to handle side-effect API transactions on component mounting.
+* **State-Driven Dynamic Pagination:** Features an internal numerical tracker (`Page`) that injects dynamic page coordinates into the URL string on click events.
+* **Memory Safety Guardrails:** Implements functional conditional checks inside event handlers to safely freeze pagination bounds, completely preventing invalid negative integer requests (`Page < 1`).
+* **Context-Aware UI Components:** The `Prev` button dynamically checks state flags to toggle disabled opacities and block pointer events when sitting on the initial data page.
+* **Responsive Viewport Bounds:** Built with a fluid, mobile-friendly width layout that automatically scales beautifully on phone screens while maintaining fixed bounds on desktop.
